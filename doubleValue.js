@@ -1,7 +1,7 @@
-var doubleValue = function (obj, arr) {
-  var result = 0;
+const doubleValue = (obj, arr) => {
+  let result = 0;
 
-  Object.keys(obj).forEach(function (key) {
+  Object.keys(obj).forEach((key) => {
     if (arr.includes(key.toLowerCase())) {
       result += obj[key] * 2;
     } else {

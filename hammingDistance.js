@@ -25,7 +25,7 @@ const hammingDistance = (x, y) => {
     let dist = 0;
 
     while (val > 0) {
-      val &= val - 1;
+      val -= 1;
       dist++;
     }
 
