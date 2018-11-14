@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+  <style>
+    body {
+      padding: 60px 0px;
+    }
+    #mocha {
+      font-size: 30px;
+    }
+  </style>
+  <script src="./node_modules/mocha/mocha.js"></script>
+  <script src="./node_modules/chai/chai.js"></script>
+  <title>Algorithm Collection</title>
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <script>mocha.setup('bdd')</script>
+    <!-- Source files -->
+  <script src="src/algorithmCollection.js"></script>
+    <!-- Spec files -->
+  <script src="spec/algorithmCollectionSpec.js"></script>
+
+  <script>
+    mocha.run();
+  </script>
+</body>
+</html>
