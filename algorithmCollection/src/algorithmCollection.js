@@ -37,3 +37,15 @@ const isPalindrome = string => {
 
 
 // <--- 3: Integer Reversal  --->
+
+// Native methods; convert to string and reverse; multiple by the sign after conversion back to number
+const reverseNum = (num) => {
+  return parseInt(num.toString().split("").reverse().join("")) * Math.sign(num);
+}
+
+
+// <--- 4: Fizz Buzz  --->
+
+const fizzBuzz = (num) => {
+
+}
