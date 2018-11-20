@@ -37,3 +37,17 @@ describe("String Reversal", () => {
    assert.equal(output[5], "Fizz Buzz");
   });
  });
+
+ describe("Max Character", () => {
+  it("Should return max character", () => {
+   assert.equal(maxChar("Hello World!"), "l");
+  });
+ });
+
+ describe("Anagrams", () => {
+  it("Should implement anagrams", () => {
+   assert.equal(anagrams("hello world", "world hello"), true);
+   assert.equal(anagrams("hellow world", "hello there"), false);
+   assert.equal(anagrams("hellow world", "hello there!"), false);
+  });
+ });
