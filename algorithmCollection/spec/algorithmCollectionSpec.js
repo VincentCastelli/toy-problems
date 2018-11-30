@@ -51,3 +51,9 @@ describe("String Reversal", () => {
    assert.equal(anagrams("hellow world", "hello there!"), false);
   });
  });
+
+ describe("Vowels", () => {
+  it("Should count vowels", () => {
+   assert.equal(vowels("hello world"), 3);
+  });
+ });

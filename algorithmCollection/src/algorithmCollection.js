@@ -68,7 +68,7 @@ const fizzBuzz = (num) => {
 };
 
 
-// <--- 5: Max Character  --->
+// <--- 5: Max Character --->
 
 // For of with for in approach using object literal as count table
 const maxChar = (str) => {
@@ -95,8 +95,50 @@ const maxChar = (str) => {
 };
 
 
-// <--- 6: Anagrams  --->
+// <--- 6: Anagrams --->
 
+// Character map with helper function 
+
+const charCount = str => {
+  const table = {};
+  // replace(regex, substitute)
+  // regex: 
+  // \W = char that is not a word char a-z; A-Z; 0-9
+  // /g = global search; match all occurrences
+  for (let char of str.replace(/\W/g, '').toLowerCase()) {
+    !table.hasOwnProperty(char) ? table[char] = 1 : table[char] += 1;
+  }
+
+  return table;
+}
 const anagrams = (str1, str2) => {
+  const charCount1 = charCount(str1);
+  const charCount2 = charCount(str2);
 
+  if (Object.keys(charCount1).length !== Object.keys(charCount2).length) {
+    return false;
+  }
+
+  for (let char in charCount1) {
+    if (charCount1[char] !== charCount2[char]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Split and sort approach
+// Downside the fastest sort will do no better than O(n log n)
+const _anagrams = (str1, str2) => {
+  str1Count = str1.toLowerCase().split('').sort().join('').trim();
+  str2Count = str2.toLowerCase().split('').sort().join('').trim();
+
+  if (str1Count !== str2Count) {
+    return false;
+  } else {
+    return true;
+  }
 };
+
+// <--- 7: Vowels --->
