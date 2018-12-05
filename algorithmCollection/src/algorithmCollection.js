@@ -142,3 +142,48 @@ const _anagrams = (str1, str2) => {
 };
 
 // <--- 7: Vowels --->
+
+// Nested iteration through a collection of Vowels approach
+const _vowels = (str) => {
+  const VOWELS = [ 'a','e','i','o','u' ];
+  let strArr = str.toLowerCase().split('');
+  let result = [];
+
+  for (let i = 0; i < str.length; i++) {
+    for (let x = 0; x < VOWELS.length; x++) {
+      if (strArr[i] === VOWELS[x]) {
+        result.push(strArr[i]);
+        break;
+      }
+    }
+  }
+
+  return result.length;
+};
+
+// Hash table with reduce approach 
+
+const vowelsObj = {
+  'a': 0,
+  'e': 0,
+  'i': 0,
+  'o': 0,
+  'u': 0
+}
+
+const vowels = (str) => {
+  for (let char of str) {
+    if (vowelsObj.hasOwnProperty(char)) {
+      vowelsObj[char] += 1;
+    }
+  }
+
+  let vowelsVal = Object.values(vowelsObj);
+  let sum = vowelsVal.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+
+  return sum;
+};
+
+// <--- 8: Array Chunking --->
